@@ -44,13 +44,13 @@ Future Plans:
 Contributors:
 Leader - Joshua Alen B. Lopez
 Members:
-		Ibias, Katrina Cassandra
-		Macariola, Jessalyn
-		Raposon, Judy Ann
-		Templo, Johnrod
+	Ibias, Katrina Cassandra
+	Macariola, Jessalyn
+	Raposon, Judy Ann
+	Templo, Johnrod
 
 
 
 Important Links:
-    Trello        - https://trello.com/invite/b/mnt5Vi7j/ATTI4e31a00aa52d06eb46f9a6927b8e4c2657467E17/maintenance-reporting-system
-    Documentation - https://docs.google.com/document/d/1tKtaRSX2IRJEJKwQHGI8JZt7FCRrvOQ7/edit?usp=sharing&ouid=117628976713269160198&rtpof=true&sd=true
+    Trello        - http://surl.li/ptobt
+    Documentation - http://surl.li/ptoce
