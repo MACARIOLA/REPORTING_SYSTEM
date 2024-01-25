@@ -44,8 +44,8 @@ Future Plans:
 Contributors:
 Leader - Joshua Alen B. Lopez
 Members:
-	Ibias, Katrina Cassandra
-	Macariola, Jessalyn
+    Ibias, Katrina Cassandra
+    Macariola, Jessalyn
 	Raposon, Judy Ann
 	Templo, Johnrod
 
