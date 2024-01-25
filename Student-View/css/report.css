@@ -1,0 +1,91 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #D8D5D0;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Center the columns horizontally */
+    align-items: center; /* Center the columns vertically */
+    margin-top: 300px; /* Adjust the top margin as needed */
+}
+
+.signup-containers {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Adjust the width as needed */
+    margin-bottom: 20px; /* Add margin between signup containers and signup button */
+}
+
+.signup-container,
+.signup2-container {
+    width: 550px; /* Adjust the width as needed, leaving some space for margin */
+    padding: 20px;
+    background-color: #D8D5D0;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the signup button vertically */
+    width: 100%; /* Make sure the buttons span the entire width */
+}
+
+.signup-btn {
+    width: 150px;
+    height: 45px;
+    background-color: #663f1b;
+    border: 2px solid black;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #482b12;
+    transform: scale(1.08);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+label {
+    color: black;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    align-self: flex-start;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000000;
+    background: #f1f1f1;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    background-color: #ddd;
+    outline: none;
+}

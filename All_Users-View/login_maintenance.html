@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/PUPLogo.png" type="image/x-icon">
+    <title>Faculty / Maintenance Login Page</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+
+<body class="page-container">
+
+    <div class="content-container">
+        <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
+        <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE <br> REPORTING SYSTEM</p>
+
+        <div class="login-container">
+            <div class="form-group">
+                <label for="uname"> <b> USER NAME: </b></label>
+                <input type="text" name="uname" required>
+            </div>
+            <div class="form-group">
+                <label for="psw"><b> PASSWORD: </b></label>
+                <input type="password" name="psw" required>
+            </div>
+
+            <div class="remember-password">
+                <input type="checkbox" id="rememberPassword" name="rememberPassword">
+                <label for="rememberPassword" class="label-remember">REMEMBER PASSWORD</label>
+            </div>
+
+
+            <div class="buttons-container">
+                <button id="loginBtn" class="login-btn" onclick="redirectTo('/Maintenance-View/maintenance_home.html')">LOGIN</button>
+                <hr class="separator">
+                <button id="signupBtn" class="login-btn" onclick="redirectTo('signup_maintenance.html')">SIGNUP</button>
+                <button id="forgotBtn" class="forgot-btn" onclick="redirectTo('forgotpassword.html')">FORGOT <br> PASSWORD</button>
+            </div>
+        </div>
+
+        <button type="button" class="back-btn" onclick="redirectToFrontPage()">
+            <img src="/images/back_arrow.png" alt="Back Arrow" class="back-image">
+            Back
+        </button>
+    </div>
+
+    <img src="/images/pup.jpg" alt="Image description" class="right-image">
+
+    <script>
+        function redirectTo(page) {
+            window.location.href = page;
+        }
+        function redirectToFrontPage() {
+            window.location.href = "front_page.html";
+        }
+    </script>
+    
+</body>
+
+</html>

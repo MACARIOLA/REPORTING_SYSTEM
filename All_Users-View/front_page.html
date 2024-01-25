@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!---------------
+          FONTS
+    ---------------->
+    <link rel="icon" href="/images/PUPLogo.png" type="image/x-icon">
+
+      <title> REPORTING SYSTEM </title>
+   
+      <link rel="stylesheet" type="text/css" href="/css/front_page.css">
+   </head>
+
+   <body>
+
+    <div class="page-container">
+       <div class="content-container">
+          <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
+          <p class="system-name"> ROOM AND LABORATORY <br>
+          CLEANLINESS AND MAINTENANCE <br>
+          REPORTING SYSTEM </p>
+
+          <div class="signin-container">
+            <button id="facultyBtn" class="login-btn" onclick="redirectTo('login_faculty.html')">FACULTY</button>
+            <button id="studentBtn" class="login-btn" onclick="redirectTo('login_student.html')">STUDENT</button>
+            <button id="maintenanceBtn" class="login-btn" onclick="redirectTo('login_maintenance.html')">MAINTENANCE</button>
+         </div> 
+
+         <script>
+         function redirectTo(page) {
+            window.location.href = page;
+         }
+         </script>
+       </div>
+
+       <img src="/images/pup.jpg" alt="Image description" class="right-image">
+    </div>
+
+ </body>
+</html>
