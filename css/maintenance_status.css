@@ -1,0 +1,107 @@
+/* ------------------- 
+        STATUS
+------------------- */
+.main {
+    padding-top: 250px;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+.table-section {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 99%;
+    max-height: calc(80vh - 100px);
+    overflow-y: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 15px;
+    text-align: center;
+}
+
+.status-table thead th {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: #85674B;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.status-table tbody td {
+    border: 1px solid black;
+    padding: 15px;
+    color: black;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    background-color: #928374;
+}
+
+.status-table tbody td.state-cell:hover {
+    transform: scale(0.96);
+}
+
+.state-cell select {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    background-color: #928374;
+}
+
+.state-cell select:focus {
+    color: black; 
+    outline: 0; 
+}
+
+
+
+/* ------------------- 
+      MEDIA QUERIES
+------------------- */
+@media only screen and (max-width: 1200px) {
+    .table-section {
+        top: 50%;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .table-section {
+        top: 48%;
+        max-height: calc(94vh - 170px);
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .table-section {
+        top: 45%;
+        max-height: calc(90vh - 160px);
+        overflow-y: auto;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .table-section {
+        top: 45%;
+        max-height: calc(90vh - 150px);
+        overflow-y: auto;
+    }
+}

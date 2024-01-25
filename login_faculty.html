@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>PUP - RLCMRS | LOGIN</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!---------------
+              FONTS
+        ---------------->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+        <!---------------
+              LOGO
+        ---------------->
+        <link rel="icon" href="images/PUPLogo.png" type="image/x-icon">
+        
+        <!---------------
+            MAIN CSS
+        ---------------->
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+    </head>
+
+
+
+    <body class="page-container">
+        <!---------------
+           LOGIN FORM
+        ---------------->
+        <div class="content-container">
+            <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
+            <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE <br> REPORTING SYSTEM</p>
+
+            <div class="login-container">
+                <div class="form-group">
+                    <label for="uname"> <b> USER NAME: </b></label>
+                    <input type="text" name="uname" required>
+                </div>
+                <div class="form-group">
+                    <label for="psw"><b> PASSWORD: </b></label>
+                    <input type="password" name="psw" required>
+                </div>
+
+                <div class="remember-password">
+                    <input type="checkbox" id="rememberPassword" name="rememberPassword">
+                    <label for="rememberPassword" class="label-remember">REMEMBER PASSWORD</label>
+                </div>
+
+
+                <div class="buttons-container">
+                    <button id="loginBtn" class="login-btn" onclick="redirectTo('faculty_home.html')">LOGIN</button>
+                    <hr class="separator">
+                    <button id="signupBtn" class="login-btn" onclick="redirectTo('signup_faculty.html')">SIGNUP</button>
+                    <button id="forgotBtn" class="forgot-btn" onclick="redirectTo('forgotpassword.html')">FORGOT <br> PASSWORD</button>
+                </div>
+            </div>
+
+
+
+            <!---------------
+               BACK BUTTON
+            ---------------->
+            <button type="button" class="back-btn" onclick="redirectToFrontPage()">
+                <img src="images/back_arrow.png" alt="Back Arrow" class="back-image">
+                Back
+            </button>
+        </div>
+        <img src="images/pup.jpg" alt="Image description" class="right-image">
+
+
+
+        <!---------------
+           MAIN SCRIPT
+        ---------------->
+        <script>
+            function redirectTo(page) {
+                window.location.href = page;
+            }
+            function redirectToFrontPage() {
+                window.location.href = "front_page.html";
+            }
+        </script>
+    </body>
+</html>

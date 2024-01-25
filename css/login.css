@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, calibri;
+    background-color: #D8D5D0;
+    margin: 0;
+}
+
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.content-container {
+    flex-grow: 1;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.university-text {
+    font-size: 24px;
+    padding: 2px;
+    color: #bd0b0b;
+    margin-top: 50px;
+}
+
+.system-name {
+    font-size: 28px;
+    color: black;
+    margin-top: 46px;
+    margin-bottom: 70px;
+}
+
+.login-container {
+    width: 250px;
+    padding: 20px;
+    margin: 20px 120px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+label {
+    color: black;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
+    align-self: flex-start; 
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 150%;
+    padding: 12px;
+    border: 1px solid #000000;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.label-remember {
+    margin-right: -50px;
+    font-size: 12px; 
+    display: inline-block; 
+    vertical-align: 2px; 
+}
+
+.remember-password input {
+    margin-right: 5px;
+    font-size: 12px;
+    display: inline-block; 
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px -100px 2px 0;
+}
+
+.login-btn,
+.forgot-btn {
+    font-size: 15px;
+    background-color: transparent;
+    color: #7D0302;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.separator {
+    width: 100%;
+    border: 1px solid #7D0302;
+    margin-top: -3px;
+    margin-bottom: -3px;
+}
+
+.login-btn:hover,
+.forgot-btn:hover,
+.back-btn:hover {
+    opacity: 0.5;
+}
+
+.forgot-btn {
+    color: #000000;
+    font-size: 11px;
+    margin-top: 50px;
+}
+
+.back-image {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px; 
+}
+
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+    background: transparent;
+    color: #7D0302;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-btn img {
+    height: 40px; 
+    width: auto; 
+}
+
+.right-image {
+    max-width: 100%;
+    height: 100%; 
+    margin-top: 0;
+}

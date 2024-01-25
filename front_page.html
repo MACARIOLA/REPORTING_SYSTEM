@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <head>
+      <title>PUP - RLCMRS</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <!---------------
+            FONTS
+      ---------------->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+      <!---------------
+            LOGO
+      ---------------->
+      <link rel="icon" href="images/PUPLogo.png" type="image/x-icon">
+      
+      <!---------------
+            MAIN CSS
+      ---------------->
+      <link rel="stylesheet" type="text/css" href="css/front_page.css">
+   </head>
+
+
+
+   <body>
+      <!---------------
+         USERS
+      ---------------->
+      <div class="page-container">
+         <div class="content-container">
+            <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
+            <p class="system-name"> ROOM AND LABORATORY <br>
+            CLEANLINESS AND MAINTENANCE <br>
+            REPORTING SYSTEM </p>
+
+            <div class="signin-container">
+               <button id="facultyBtn" class="login-btn" onclick="redirectTo('login_faculty.html')">FACULTY</button>
+               <button id="studentBtn" class="login-btn" onclick="redirectTo('login_student.html')">STUDENT</button>
+               <button id="maintenanceBtn" class="login-btn" onclick="redirectTo('login_maintenance.html')">MAINTENANCE</button>
+            </div> 
+         </div>
+         <img src="images/pup.jpg" alt="Image description" class="right-image">
+      </div>
+
+
+
+      <!---------------
+         MAIN SCRIPT
+      ---------------->
+      <script>
+         function redirectTo(page) {
+            window.location.href = page;
+         }
+      </script>
+   </body>
+</html>

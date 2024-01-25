@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>PUP - RLCMRS | SIGN UP</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!---------------
+              FONTS
+        ---------------->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+        <!---------------
+              LOGO
+        ---------------->
+        <link rel="icon" href="images/PUPLogo.png" type="image/x-icon">
+        
+        <!---------------
+            MAIN CSS
+        ---------------->
+        <link rel="stylesheet" type="text/css" href="css/signup.css">
+    </head>
+
+
+
+    <body class="page-container">
+        <!---------------
+           SIGN UP FORM
+        ---------------->
+        <div class="content-container">
+            <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
+            <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE REPORTING SYSTEM</p>
+
+            <div class="content-container">
+                <div class="signup-container">
+                    <div class="form-group">
+                        <label for="fname"><b> FIRST NAME: </b></label>
+                        <input type="text" name="fname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname"><b> LAST NAME: </b></label>
+                        <input type="password" name="lname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><b> EMAIL: </b></label>
+                        <input type="password" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="course"><b> COURSE: </b></label>
+                        <input type="password" name="course" required>
+                    </div>
+                </div>
+
+                <div class="signup2-container">
+                    <div class="form-group">
+                        <label for="stdNumber"><b> USER NAME: </b></label>
+                        <input type="text" name="stdNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><b> PASSWORD: </b></label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword"><b> CONFIRM PASSWORD: </b></label>
+                        <input type="password" name="confirmPassword" required>
+                    </div>
+                </div>
+
+                <div class="buttons-container">
+                    <button id="signupBtn" class="signup-btn" onclick="redirectTo('login_maintenance.html')">SIGNUP</button>
+                </div>
+            </div>
+
+
+
+                <!---------------
+                   BACK BUTTON
+                ---------------->
+                <button type="button" class="back-btn" onclick="redirectTologin_faculty()">
+                    <img src="images/back_arrow.png" alt="Back Arrow" class="back-image">
+                    Back
+                </button>
+            </div>
+
+
+
+            <!---------------
+               MAIN SCRIPT
+            ---------------->
+        <script>
+            function redirectTo(page) {
+                window.location.href = page;
+            }
+
+            function redirectTologin_maintenance() {
+                window.location.href = "login_maintenance.html";
+            }
+        </script>
+    </body>
+</html>
