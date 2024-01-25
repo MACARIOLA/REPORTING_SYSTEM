@@ -13,21 +13,21 @@ body {
 .content-container {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Center the columns horizontally */
-    align-items: center; /* Center the columns vertically */
-    margin-top: 300px; /* Adjust the top margin as needed */
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 300px; 
 }
 
 .signup-containers {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Adjust the width as needed */
-    margin-bottom: 20px; /* Add margin between signup containers and signup button */
+    width: 100%; 
+    margin-bottom: 20px; 
 }
 
 .signup-container,
 .signup2-container {
-    width: 550px; /* Adjust the width as needed, leaving some space for margin */
+    width: 550px; 
     padding: 20px;
     background-color: #D8D5D0;
 }
@@ -35,13 +35,13 @@ body {
 .buttons-container {
     display: flex;
     justify-content: center;
-    align-items: center; /* Center the signup button vertically */
-    width: 100%; /* Make sure the buttons span the entire width */
+    align-items: center;
+    width: 100%;
 }
 
 .signup-btn {
-    width: 150px;
-    height: 45px;
+    width: 200px;
+    height: 60px;
     background-color: #663f1b;
     border: 2px solid black;
     color: white;
