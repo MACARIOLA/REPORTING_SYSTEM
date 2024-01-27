@@ -32,6 +32,8 @@
             <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
             <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE REPORTING SYSTEM</p>
 
+            <form method="POST" action="php/signup_student.php">
+
             <div class="content-container">
                 <div class="signup-container">
                     <div class="form-group">
@@ -40,15 +42,15 @@
                     </div>
                     <div class="form-group">
                         <label for="lname"><b> LAST NAME: </b></label>
-                        <input type="password" name="lname" required>
+                        <input type="text" name="lname" required>
                     </div>
                     <div class="form-group">
                         <label for="email"><b> EMAIL: </b></label>
-                        <input type="password" name="email" required>
+                        <input type="text" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="course"><b> COURSE: </b></label>
-                        <input type="password" name="course" required>
+                        <input type="text" name="course" required>
                     </div>
                 </div>
 
@@ -68,11 +70,11 @@
                 </div>
 
                 <div class="buttons-container">
-                    <button id="signupBtn" class="signup-btn" onclick="redirectTo('login_student.html')">SIGNUP</button>
+                    <button id="signupBtn" class="signup-btn">SIGNUP</button>
                 </div>
             </div>
 
-
+        </form>
 
                 <!---------------
                    BACK BUTTON
@@ -88,14 +90,15 @@
             <!---------------
                MAIN SCRIPT
             ---------------->
-        <script>
-            function redirectTo(page) {
-                window.location.href = page;
-            }
+            <script>
+                function redirectTo(page) {
+                    window.location.href = page;
+                }
 
-            function redirectTologin_student() {
-                window.location.href = "login_student.html";
-            }
-        </script>
+                function redirectTologin_student() {
+                    window.location.href = "login_student.html";
+                }
+            </script>
+
     </body>
 </html>
