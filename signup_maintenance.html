@@ -32,6 +32,8 @@
             <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
             <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE REPORTING SYSTEM</p>
 
+            <form method="POST" action="php/signup_maintenance.php">
+
             <div class="content-container">
                 <div class="signup-container">
                     <div class="form-group">
@@ -40,22 +42,22 @@
                     </div>
                     <div class="form-group">
                         <label for="lname"><b> LAST NAME: </b></label>
-                        <input type="password" name="lname" required>
+                        <input type="text" name="lname" required>
                     </div>
                     <div class="form-group">
                         <label for="email"><b> EMAIL: </b></label>
-                        <input type="password" name="email" required>
+                        <input type="text" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="course"><b> COURSE: </b></label>
-                        <input type="password" name="course" required>
+                        <label for="task"><b> TASK: </b></label>
+                        <input type="text" name="task" required>
                     </div>
                 </div>
 
                 <div class="signup2-container">
                     <div class="form-group">
-                        <label for="stdNumber"><b> USER NAME: </b></label>
-                        <input type="text" name="stdNumber" required>
+                        <label for="uname"><b> USER NAME: </b></label>
+                        <input type="text" name="uname" required>
                     </div>
                     <div class="form-group">
                         <label for="password"><b> PASSWORD: </b></label>
@@ -68,7 +70,7 @@
                 </div>
 
                 <div class="buttons-container">
-                    <button id="signupBtn" class="signup-btn" onclick="redirectTo('login_maintenance.html')">SIGNUP</button>
+                    <button id="signupBtn" class="signup-btn">SIGNUP</button>
                 </div>
             </div>
 
