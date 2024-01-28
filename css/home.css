@@ -1,254 +1,140 @@
 /* ------------------- 
-        RESETS
- ------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+        HOME
+------------------- */
+.main {
+    padding-top: 250px;
+    padding-bottom: 100px;
+    position: relative;
 }
-
-body {
-    background-color: #D8D5D0;
-}
-
-
-
-/* ------------------- 
-    NAVIGATION BAR
- ------------------- */
- header {
-    position: fixed;
-    top: 0; 
-    width: 100%;
-    font-size: 32px;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FEEDE8;
-    z-index: 1;
-}
-
-.main-content {
-    padding-top: 200px;
-    margin-top: 100px; 
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    flex: 1;
-    text-align: center;
-}
-
-nav ul li a {
-    display: block;
-    padding: 50px;
-    color: #7D0302;
-    text-decoration: none;
-    transition: all 0.5s ease;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 4px solid black;
-    border-top: 4px solid #FEEDE8;
-}
-
-nav ul li:nth-child(4) a {
-    border-left: 1px solid #FEEDE8;
-}
-
-nav ul li:last-child a {
-    border-right: 1px solid #FEEDE8;
-}
-
-nav ul li:nth-child(4) a:hover {
-    color: #FFFFFF;
-    background-color: #85674B;
-    border-left: 1px solid #3D3A38;
-    border-top: 4px solid #85674B;
-}
-
-nav ul li:last-child a:hover {
-    color: #FFFFFF;
-    background-color: #85674B;
-    border-right: 1px solid #3D3A38;
-    border-top: 4px solid #85674B;
-}
-
-nav ul li:nth-child(2) a:hover {
-    color: #FFFFFF;
-    background-color: #85674B;
-    border-top: 4px solid #85674B;
-}
-
-nav ul li:nth-child(3) a:hover {
-    color: #FFFFFF;
-    background-color: #85674B;
-    border-top: 4px solid #85674B;
-}
-
-nav ul li:first-child a {
-    color: black;
-    background-color: #D8D5D0;
-    border-right: 3px solid black;
-    border-bottom: 4px solid #D8D5D0;
-    border-top: 4px solid black;
-}
-
-
-
-/* ------------------- 
-        FOOTER
- ------------------- */
- footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #FEEDE8;
-    border-top: 4px solid black;
-    padding: 10px;
-    z-index: 2;
-    margin-top: 10px;
-}
-
-.footer-content {
-    color: #7D0302;
-    font-size: 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.contact-title, .quick-links {
-    font-size: 32px;
-}
-
-.contact-info, .footer-link {
-    text-decoration: none;
-    color: #7D0302;
-}
-
-.contact-title {
-    margin-left: 75px;
-    margin-right: 20px;
-}
-
-.contact-info {
-    margin-right: 100px; 
-    margin-left: -100px; 
-}
-
-.quick-links {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.footer-link {
-    margin-right: 100px;
-    margin-left: -100px;
-}
-
-.footer-link:hover {
-    transition: all 0.3s ease;
-    color: black;
-    cursor: pointer;
-}
-
-
-
-/* ------------------- 
-       HOME
- ------------------- */
- 
  
 .table-section {
     position: absolute;
-    top: 200px;
+    top: 54%;
     left: 50%;
-    bottom: 90px;
-    transform: translateX(-50%);
-    width: 100%;
-    z-index: 3; 
-    overflow-y: auto; 
-    max-height: calc(100vh - 250px); 
+    transform: translate(-50%, -50%);
+    width: 99%;
+    max-height: calc(80vh - 100px);
+    overflow-y: auto;
+}
+
+.table-section h1.section-title {
+    font-size: 28px;
+    margin-bottom: 30px; 
+}
+
+.table-section h1.section2-title {
+    font-size: 28px;
+    margin-top: 100px; 
 }
 
 
-
-.custom-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 15px;
-    font-family: 'Montserrat', sans-serif;
-	text-align: justify;
-}
-
-
-thead th {
-    border: 1px solid black;
-    padding: 35px;
-    background-color: #85674B;
-    color: white;
-    font-size: 20px;
-    border-radius: 50px;
-}
 
 /* ------------------- 
-      IMAGE
- ------------------- */
- .image {
-	 width: 70%;
-	 height: 60vh;
-	 display:flex;
-	 justify-content:center;
-	 align-items:center;
-	 flex-direction:row;
-	 margin: 0 auto;
-	 
- }
+        ABOUT
+------------------- */
+.table-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-div {
+    background-color: #FBF4F2;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 98%;
+    height: 220px;
+    z-index: -1;
+    border-radius: 36px;
+
+}
+
+.custom-table {
+    color: #85674B;
+    width: 98%; 
+    border-collapse: collapse;
+    text-align: justify;
+    margin-top: 22px;
+}
+
+.custom-table td {
+    vertical-align: top;
+    padding: 20px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.right-column,
+.left-column {
+    width: 50%;
+    text-align: justify;
+}
+
+
+
+/* ------------------- 
+      DEVELOPERS
+------------------- */
+.image {
+	width: 70%;
+	height: 60vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:row;
+	margin: 0 auto;
+}
  
- .image img {
-	 height: 200px;
-	 width: 200px;
-	 border-radius: 100%;
-	 border:5px solid #85674B;
-	 margin: 50px;
- }
+.image img {
+    height: 200px;  
+    width: 200px;   
+    border-radius: 50%; 
+    border: 8px solid #D8D5D0;
+    margin: 50px;
+    transition: all 0.3s ease;
+    object-fit: cover; 
+}
+
+.image img:hover {
+    transform: scale(1.08);
+}
  
 .developer {
     text-align: center;
-    margin: 20px; /* Adjust margin as needed */
-}
-
-.developer img {
-    height: 200px;
-    width: 200px;
+    margin: 25px; 
+    margin-top: -80px;
 }
 
 .developer-info {
-    background-color: #85674B;
+    background-color: #FBF4F2;
     color: #212121;
-	border-radius: 25%; /* Add border-radius for rounded corners */
-	font-family: 'Montserrat', sans-serif;
-    font-size: 20px;padding: 100px;
-    margin-top: -150px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    padding: 20px; 
+    margin-top: -180px;
+    height: 380px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
-/* ------------------- 
-      SOME DESIGNS
- ------------------- */
-::-webkit-scrollbar {
-    width: 12px;
+.developer-info p.devname {
+    font-weight: bold;
+    font-size: 24px; 
+    margin-top: 80px;
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: black;
-    border-radius: 10px;
+.developer-info p {
+    width: 70%; 
+    margin: 0 auto; 
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: #2e2e2e;
+.roles { 
+    font-size: 20px;
+    color: #85674B;
 }
