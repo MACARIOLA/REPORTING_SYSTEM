@@ -49,7 +49,6 @@
     height: 220px;
     z-index: -1;
     border-radius: 36px;
-
 }
 
 .custom-table {
@@ -80,7 +79,7 @@
 ------------------- */
 .image {
 	width: 70%;
-	height: 60vh;
+	height: 30vh;
 	display:flex;
 	justify-content:center;
 	align-items:center;
@@ -105,7 +104,7 @@
 .developer {
     text-align: center;
     margin: 25px; 
-    margin-top: -80px;
+    margin-top: 250px;
 }
 
 .developer-info {
@@ -137,4 +136,362 @@
 .roles { 
     font-size: 20px;
     color: #85674B;
+}
+
+
+
+/* ------------------- 
+      MEDIA QUERIES
+------------------- */
+@media only screen and (max-width: 1800px) {
+    .table-section {
+        top: 52%;
+    }
+
+    .background-div {
+        height: 220px; 
+    }
+
+    .custom-table td {
+        font-size: 17px; 
+    }
+
+    .image img {
+        height: 180px;
+        width: 180px;
+        border: 6px solid #D8D5D0;
+        margin: 40px;
+    }
+
+    .developer-info {
+        font-size: 18px;
+        padding: 15px;
+        margin-top: -140px;
+        height: 340px;
+    }
+
+    .developer-info p.devname {
+        width: 60%;
+        font-size: 20px;
+        margin-top: 60px;
+    }
+
+    .developer-info p {
+        width: 70%;
+    }
+
+    .roles {
+        font-size: 18px;
+    }
+
+    .developer {
+        margin-top: 200px;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .table-section {
+        top: 52%;
+    }
+
+    .background-div {
+        height: 220px; 
+    }
+
+    .custom-table td {
+        font-size: 16px; 
+    }
+
+    .image img {
+        height: 160px;
+        width: 160px;
+        border: 6px solid #D8D5D0;
+        margin: 30px;
+    }
+
+    .developer-info {
+        font-size: 17px;
+        padding: 10px;
+        margin-top: -120px;
+        height: 290px;
+        border-radius: 40px;
+    }
+
+    .developer-info p.devname {
+        font-size: 18px;
+        margin-top: 50px;
+    }
+
+    .developer-info p {
+        width: 70%;
+    }
+
+    .roles {
+        font-size: 16px;
+    }
+
+    .developer {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .table-section {
+        top: 52%;
+    }
+
+    .background-div {
+        height: 220px; 
+    }
+
+    .custom-table td {
+        font-size: 15px; 
+    }
+
+    .image img {
+        height: 140px;
+        width: 140px;
+        border: 5px solid #D8D5D0;
+        margin: 25px;
+    }
+
+    .developer-info {
+        font-size: 14px;
+        padding: 12px;
+        margin-top: -100px;
+        height: 250px;
+        border-radius: 40px;
+    }
+
+    .developer-info p.devname {
+        font-size: 16px;
+        margin-top: 50px;
+    }
+
+    .developer-info p {
+        width: 70%;
+    }
+
+    .roles {
+        font-size: 14px;
+    }
+
+    .developer {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .table-section {
+        top: 50%;
+    }
+
+    .background-div {
+        height: 240px; 
+    }
+
+    .custom-table td {
+        font-size: 14px; 
+    }
+
+    .image img {
+        height: 120px;
+        width: 120px;
+        border: 5px solid #D8D5D0;
+        margin: 10px;
+    }
+
+    .developer-info {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: -70px;
+        height: 200px;
+        border-radius: 30px;
+    }
+
+    .developer {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .developer-info p.devname {
+        width: 100%;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+
+    .developer-info p {
+        width: 70%;
+    }
+
+    .roles {
+        font-size: 12px;
+    }
+
+    .image {
+        height: 400px;
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    .table-section {
+        top: 48%;
+        max-height: calc(95vh - 220px);
+    }
+
+    .background-div {
+        height: 240px; 
+    }
+
+    .custom-table td {
+        font-size: 13px; 
+        padding: 10px;
+    }
+
+    .image img {
+        height: 100px;
+        width: 100px;
+        border: 3px solid #D8D5D0;
+        margin: 10px;
+    }
+
+    .developer-info {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: -70px;
+        height: 200px;
+        border-radius: 25px;
+    }
+
+    .developer {
+        text-align: center;
+        margin-top: -160px;
+        margin-bottom: -150px;
+    }
+
+    .developer-info p.devname {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .developer-info p {
+        width: 70%;
+    }
+
+    .roles {
+        font-size: 12px;
+    }
+
+    .image {
+        margin-left: 150px;
+        height: 38vh;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .table-section {
+        top: 45%;
+    }
+
+    .background-div {
+        height: 260px; 
+    }
+
+    .custom-table td {
+        font-size: 12px; 
+        padding: 10px;
+    }
+
+    .image img {
+        height: 80px;
+        width: 80px;
+        border: 3px solid #D8D5D0;
+        margin: 10px;
+    }
+
+    .developer-info {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: -70px;
+        height: 200px;
+        border-radius: 18px;
+    }
+
+    .developer {
+        text-align: center;
+        margin-top: -100px;
+    }
+
+    .developer-info p.devname {
+        width: 100%;
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .developer-info p {
+        width: 80%;
+    }
+
+    .roles {
+        font-size: 10px;
+    }
+
+    .image {
+        margin-left: 160px;
+        height: 35vh;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .table-section {
+        top: 45%;
+    }
+
+    .background-div {
+        height: 270px; 
+    }
+
+    .custom-table td {
+        font-size: 11px; 
+    }
+
+    .image img {
+        height: 70px;
+        width: 70px;
+        border: 3px solid #D8D5D0;
+        margin: 10px;
+    }
+
+    .developer-info {
+        font-size: 12px;
+        padding: 10px;
+        margin-top: -50px;
+        height: 200px;
+    }
+
+    .developer {
+        text-align: center;
+        margin-top: -200px;
+    }
+
+    .developer-info p.devname {
+        width: 100%;
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+
+    .developer-info p {
+        width: 80%;
+    }
+
+    .roles {
+        font-size: 10px;
+    }
+
+    .image {
+        margin-left: 180px;
+        height: 35vh;
+    }
 }
