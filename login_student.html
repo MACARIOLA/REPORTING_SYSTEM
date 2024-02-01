@@ -32,12 +32,12 @@
             <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
             <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE <br> REPORTING SYSTEM</p>
 
-            <form action="login_student.php" method="post" autocomplete="off">
+            <form method="POST" action="php/login_student.php">
 
             <div class="login-container">
                 <div class="form-group">
-                    <label for="student_number"> <b> STUDENT NUMBER: </b></label>
-                    <input type="text" name="student_number" required>
+                    <label for="stdNumber"> <b> STUDENT NUMBER: </b></label>
+                    <input type="text" name="stdNumber" required>
                 </div>
                 <div class="form-group">
                     <label for="password"><b> PASSWORD: </b></label>
@@ -51,21 +51,22 @@
 
 
                 <div class="buttons-container">
-                    <button type="submit" id="loginBtn" class="login-btn">LOGIN</button>
-            </form>
-
+                    <button type="submit" class="login-btn">LOGIN</button>                    
                     <hr class="separator">
                     <button id="signupBtn" class="login-btn" onclick="redirectTo('signup_student.html')">SIGNUP</button>
                     <button id="forgotBtn" class="forgot-btn" onclick="redirectTo('forgotpassword.html')">FORGOT <br> PASSWORD</button>
                 </div>
             </div>
+    
+            </form>
+
 
 
 
             <!---------------
                BACK BUTTON
             ---------------->
-            <button type="button" class="back-btn" onclick="redirectTo('front_page.html')">
+            <button type="button" class="back-btn" onclick="redirectToFrontPage()">
                 <img src="images/back_arrow.png" alt="Back Arrow" class="back-image">
                 Back
             </button>
@@ -77,12 +78,13 @@
         <!---------------
             MAIN SCRIPT
         ---------------->
-        
         <script>
             function redirectTo(page) {
                 window.location.href = page;
             }        
-            
+            function redirectToFrontPage() {
+                window.location.href = "front_page.html";
+            }
         </script>
     </body>
 </html>
