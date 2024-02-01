@@ -24,7 +24,11 @@ if ($result->num_rows > 0) {
     header("Location: ../student_home.html");  // Corrected redirection
     exit();
 } else {
-    echo "Invalid login credentials";
+    // Display popup with JavaScript
+    echo "<script>
+            alert('Invalid login credentials');
+            window.location.href = '../login_student.html';
+          </script>";
 }
 
 $conn->close();
