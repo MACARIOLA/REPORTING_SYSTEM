@@ -10,26 +10,11 @@ body {
     justify-content: space-between;
 }
 
-.content-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center; /* Center the columns horizontally */
-    align-items: center; /* Center the columns vertically */
-    margin-top: 300px; /* Adjust the top margin as needed */
-}
-
 .signup-containers {
     display: flex;
     justify-content: space-between;
     width: 100%; /* Adjust the width as needed */
     margin-bottom: 20px; /* Add margin between signup containers and signup button */
-}
-
-.signup-container,
-.signup2-container {
-    width: 550px; /* Adjust the width as needed, leaving some space for margin */
-    padding: 20px;
-    background-color: #D8D5D0;
 }
 
 .buttons-container {
