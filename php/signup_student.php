@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $_POST["email"]);
     $course = mysqli_real_escape_string($conn, $_POST["course"]);
     $student_number = mysqli_real_escape_string($conn, $_POST["stdNumber"]);
-    $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash the password
+    $password = mysqli_real_escape_string($conn, $_POST["password"]);
+
 
     // SQL query to insert data into the registration_tbl using prepared statement
     $sql = "INSERT INTO student_registration_tbl (first_name, last_name, email, course, student_number, password) 
