@@ -32,14 +32,16 @@
             <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
             <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE <br> REPORTING SYSTEM</p>
 
+            <form method="POST" action="php/login_maintenance.php">
+
             <div class="login-container">
                 <div class="form-group">
-                    <label for="uname"> <b> USER NAME: </b></label>
-                    <input type="text" name="uname" required>
+                    <label for="maintenance_username"> <b> USER NAME: </b></label>
+                    <input type="text" name="maintenance_username" required>
                 </div>
                 <div class="form-group">
-                    <label for="psw"><b> PASSWORD: </b></label>
-                    <input type="password" name="psw" required>
+                    <label for="password"><b> PASSWORD: </b></label>
+                    <input type="password" name="password" required>
                 </div>
 
                 <div class="remember-password">
@@ -49,14 +51,14 @@
 
 
                 <div class="buttons-container">
-                    <button id="loginBtn" class="login-btn" onclick="redirectTo('maintenance_home.html')">LOGIN</button>
+                    <button id="loginBtn" class="login-btn">LOGIN</button>
                     <hr class="separator">
                     <button id="signupBtn" class="login-btn" onclick="redirectTo('signup_maintenance.html')">SIGNUP</button>
                     <button id="forgotBtn" class="forgot-btn" onclick="redirectTo('forgotpassword.html')">FORGOT <br> PASSWORD</button>
                 </div>
             </div>
 
-
+            </form>
 
             <!---------------
                BACK BUTTON
@@ -71,7 +73,7 @@
 
 
         <!---------------
-            MAIN SCRIPT
+           MAIN SCRIPT
         ---------------->
         <script>
             function redirectTo(page) {
