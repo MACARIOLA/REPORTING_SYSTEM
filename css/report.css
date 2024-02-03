@@ -11,10 +11,17 @@ body {
 }
 
 .signup-containers {
+    margin-top: 200px;
+    margin-left: 260px;
     display: flex;
     justify-content: space-between;
     width: 50%; /* Adjust the width as needed */
     margin-bottom: 20px; /* Add margin between signup containers and signup button */
+}
+
+/* Add the margin to create space between signup containers */
+.signup-container {
+    margin-right: 20px;
 }
 
 .buttons-container {
@@ -47,6 +54,7 @@ body {
     flex-direction: column;
     margin-bottom: 20px;
     align-items: flex-start;
+    width: 500px;
 }
 
 label {
@@ -57,19 +65,17 @@ label {
     align-self: flex-start;
 }
 
-input[type="text"],
-input[type="password"],
+/* Adjust the styling for the select element */
 select {
     width: 100%;
     padding: 12px;
     border: 1px solid #000000;
     background: #f1f1f1;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 16px; /* Adjust the font size for consistency */
+    appearance: none; /* Remove default arrow styling in some browsers */
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
 select:focus {
     background-color: #ddd;
     outline: none;
