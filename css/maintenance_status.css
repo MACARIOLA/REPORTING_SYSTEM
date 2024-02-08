@@ -105,3 +105,31 @@
         overflow-y: auto;
     }
 }
+
+input[type="text"] {
+    background: transparent;
+    border: 0; /* Add a border for better visibility, you can customize this */
+    padding: 1px; /* Add padding for better spacing, you can customize this */
+    width: 100%; /* Adjust the width as needed */
+    font-size: 15px; /* Set the font size to 12px */
+}
+
+input[type="text"] {
+    background-color: transparent;
+    outline: none;
+}
+
+.save-btn {
+    font-size: 15px;
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.save-btn:hover {
+    transform: scale(1.20);
+}
