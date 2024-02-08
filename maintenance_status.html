@@ -55,6 +55,7 @@
                                 <th>State</th>
                                 <th>Date-Started</th>
                                 <th>Date-Finished</th>
+                                <th>Update State</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -63,53 +64,62 @@
                                 <td class="state-cell"></td>
                                 <td>---</td>
                                 <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
                                 <td>---</td>
-                            </tr>
-                            <tr>
-                                <td>Comlab 2</td>
-                                <td class="state-cell"></td>
-                                <td>2023-01-01</td>
                                 <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
                                 <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
-                                <td>2023-01-15</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
-                                <td>2023-01-15</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
-                                <td>2023-01-15</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
-                                <td>2023-01-15</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                             <tr>
                                 <td>Comlab 2</td>
                                 <td class="state-cell"></td>
-                                <td>2023-01-01</td>
-                                <td>2023-01-15</td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
+                            </tr>
+                            <tr>
+                                <td>Comlab 2</td>
+                                <td class="state-cell"></td>
+                                <td>---</td>
+                                <td>---</td>
+                                <td class="savebtn" onclick="updateState(this)">Save</td>
                             </tr>
                         </tbody>
                     </table>
@@ -125,33 +135,62 @@
         <script>
             function createDropdown(cell) {
                 var select = document.createElement("select");
-                select.onchange = function() {
-                    updateStatus(this); 
+                select.onchange = function () {
+                    // Do nothing when dropdown is changed
                 };
-
+        
                 var options = ["Standby", "Cleaning", "Fixing", "Replacing", "Done"];
-
+        
                 for (var i = 0; i < options.length; i++) {
                     var option = document.createElement("option");
-                    option.value = options[i].toLowerCase(); 
+                    option.value = options[i].toLowerCase();
                     option.text = options[i];
                     select.appendChild(option);
                 }
-
+        
+                // Set "Standby" as the default option
+                select.value = "standby";
+        
                 cell.appendChild(select);
+            }
+        
+            function updateState(cell) {
+                var row = cell.parentNode;
+                var stateCell = row.querySelector('.state-cell');
+                var dateStartedCell = row.querySelectorAll('td')[2];
+                var dateFinishedCell = row.querySelectorAll('td')[3];
+        
+                var currentState = cell.parentNode.querySelector('select').value;
+                var currentTime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        
+                // Capitalize the first letter of the state
+                var capitalizedState = currentState.charAt(0).toUpperCase() + currentState.slice(1);
+
+                if (currentState !== "standby" && currentState !== "Done") {
+                    stateCell.textContent = capitalizedState;
+                    dateStartedCell.textContent = currentTime;
+
+                    if (currentState === "Done") {
+                        dateStartedCell.textContent = "---";
+                        dateFinishedCell.textContent = currentTime;
+                    }
+                    else {
+                        dateFinishedCell.textContent = "---"; // Reset Date-Finished cell for other tasks
+                    }
+                } 
             }
 
             function initializeDropdowns() {
                 var stateCells = document.querySelectorAll('.state-cell');
-                stateCells.forEach(function(cell) {
+                stateCells.forEach(function (cell) {
                     createDropdown(cell);
                 });
             }
-
+        
             document.addEventListener('DOMContentLoaded', initializeDropdowns);
         </script>
-
-
+        
+        
 
         <!---------------
             FOOTER
@@ -169,6 +208,7 @@
                     <td class="quick-links">
                         <a href="https://www.pup.edu.ph/about/contactus" class="footer-link">Contacts</a>
                     </td>
+                    <td class="quick-links">Logout</td>
                 </tr>
             </table>
         </footer>
