@@ -149,3 +149,39 @@ input[type="password"]:focus {
     height: 100%; 
     margin-top: 0;
 }
+
+/* ------------------- 
+      MEDIA QUERIES
+------------------- */
+@media only screen and (max-width: 1200px) {
+    .right-image {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .right-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* Add styles for screens up to 768px */
+    .right-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    /* Add styles for screens up to 576px */
+    .right-image {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Add styles for screens up to 480px */
+    .right-image {
+        display: none;
+    }
+}
