@@ -108,19 +108,27 @@
 
 input[type="text"] {
     background: transparent;
-    border: 0; /* Add a border for better visibility, you can customize this */
-    padding: 1px; /* Add padding for better spacing, you can customize this */
-    width: 100%; /* Adjust the width as needed */
-    font-size: 15px; /* Set the font size to 12px */
+    border: 0; 
+    padding: 1px; 
+    width: 100%; 
+    font-size: 15px; 
 }
 
 input[type="text"] {
     background-color: transparent;
     outline: none;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
+    text-align: center;
+}
+
+input[type="text"]::placeholder {
+    color: #00000091; 
 }
 
 .save-btn {
-    font-size: 15px;
+    font-size: 20px;
     background-color: transparent;
     color: #000000;
     border: none;
