@@ -133,6 +133,17 @@ footer {
     cursor: pointer;
 }
 
+.logout a {   
+    text-decoration: none;
+    color: #7D0302;
+    transition: all 0.3s ease;
+}
+
+.logout a:hover {
+    color: black;
+    cursor: pointer;
+}
+
 /* ------------------- 
       SOME DESIGNS
  ------------------- */
