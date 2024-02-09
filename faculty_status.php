@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href="faculty_home.html" id="home">Home</a></li>
                     <li><a href="faculty_statistics.html" id="statistics">Statistics</a></li>
-                    <li class="active"><a href="faculty_status.html" id="status">Status</a></li>
+                    <li class="active"><a href="faculty_status.php" id="status">Status</a></li>
                     <li><a href="faculty_credits.html" id="credits">Credits</a></li>
                 </ul>
             </nav>
@@ -101,7 +101,7 @@
              FOOTER
         ---------------->
         <footer>
-            <table class="footer-table">
+        <table class="footer-table">
                 <tr>
                     <td class="contact-title">Contact Us:</td>
                     <td class="contact-info">binan@pup.edu.ph</td>
@@ -113,6 +113,7 @@
                     <td class="quick-links">
                         <a href="https://www.pup.edu.ph/about/contactus" class="footer-link">Contacts</a>
                     </td>
+                    <td class="quick-links logout"><a href="front_page.html">Logout</a></td>
                 </tr>
             </table>
         </footer>
