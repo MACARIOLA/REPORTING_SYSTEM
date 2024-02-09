@@ -34,7 +34,7 @@
                 <ul>
                     <li><a href="student_home.html" id="home">Home</a></li>
                     <li><a href="student_report.html" id="report">Report</a></li>
-                    <li><a href="student_statistics.html" id="statistics">Statistics</a></li>
+                    <li><a href="student_statistics.php" id="statistics">Statistics</a></li>
                     <li class="active"><a href="student_status.php" id="status">Status</a></li>
                     <li><a href="student_credits.html" id="credits">Credits</a></li>
                 </ul>
