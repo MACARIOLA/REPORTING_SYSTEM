@@ -52,6 +52,7 @@
                     <table class="status-table">
                         <thead>
                             <tr>
+                                <th>Building</th>
                                 <th>Room/Laboratory</th>
                                 <th>State</th>
                                 <th>Date-Started</th>
@@ -77,6 +78,7 @@
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
+                                    echo "<td>" . $row['building'] . "</td>";
                                     echo "<td>" . $row['room'] . "</td>";
                                     echo "<td>" . $row['state'] . "</td>";
                                     echo "<td>" . $row['timestamp'] . "</td>";
