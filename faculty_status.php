@@ -33,7 +33,7 @@
             <nav>
                 <ul>
                     <li><a href="faculty_home.html" id="home">Home</a></li>
-                    <li><a href="faculty_statistics.html" id="statistics">Statistics</a></li>
+                    <li><a href="faculty_statistics.php" id="statistics">Statistics</a></li>
                     <li class="active"><a href="faculty_status.php" id="status">Status</a></li>
                     <li><a href="faculty_credits.html" id="credits">Credits</a></li>
                 </ul>
