@@ -10,8 +10,8 @@ if ($conn->connect_error) {
     die("Connection failed" . $conn->connect_error);
 }
 
-// Fetch data from the database
-$sql = "SELECT id, room, timestamp, `Date End` FROM student_report_tbl";
+// Fetch data from the database (include 'state' column in the query)
+$sql = "SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl";
 $result = $conn->query($sql);
 
 if ($result) {
@@ -23,7 +23,12 @@ if ($result) {
             $id = $data[$key]['id'];
             $dateEnd = mysqli_real_escape_string($conn, $value);
 
-            $updateSql = "UPDATE student_report_tbl SET `Date End`='$dateEnd' WHERE `id`='$id'";
+            // Check if 'state' key exists and is not null
+            $state = isset($data[$key]['state']) && $data[$key]['state'] !== null
+                ? mysqli_real_escape_string($conn, $_POST['state'][$key])
+                : '';
+
+            $updateSql = "UPDATE student_report_tbl SET `Date End`='$dateEnd', `state`='$state' WHERE `id`='$id'";
             $updateResult = $conn->query($updateSql);
 
             if (!$updateResult) {
@@ -32,7 +37,7 @@ if ($result) {
         }
 
         // Fetch updated data after submission
-        $result = $conn->query("SELECT id, room, timestamp, `Date End` FROM student_report_tbl");
+        $result = $conn->query("SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl");
         $data = $result->fetch_all(MYSQLI_ASSOC);
     }
 
@@ -86,12 +91,20 @@ if ($result) {
                         <tbody>';
                         foreach ($data as $key => $row) {
                             echo '<tr>
-                                <td>' . $row['room'] . '</td>
-                                <td class="state-cell"></td>
-                                <td>' . ($row['timestamp'] == '0000-00-00 00:00:00' ? '---' : $row['timestamp']) . '</td>
-                                <td><input type="text" name="custom_field[]" placeholder="YYYY-MM-DD" value="' . (isset($_POST['custom_field'][$key]) ? htmlspecialchars($_POST['custom_field'][$key]) : '') . '" /></td>
-                                <td> <button type="submit" name="save_btn" class="save-btn">SAVE</button> </td>
-                            </tr>';
+                                    <td>' . $row['room'] . '</td>
+                                    <td class="state-cell">
+                                        <select name="state[]">
+                                            <option value="standby" ' . ($row['state'] == 'standby' ? 'selected' : '') . '>Standby</option>
+                                            <option value="cleaning" ' . ($row['state'] == 'cleaning' ? 'selected' : '') . '>Cleaning</option>
+                                            <option value="fixing" ' . ($row['state'] == 'fixing' ? 'selected' : '') . '>Fixing</option>
+                                            <option value="replacing" ' . ($row['state'] == 'replacing' ? 'selected' : '') . '>Replacing</option>
+                                            <option value="done" ' . ($row['state'] == 'done' ? 'selected' : '') . '>Done</option>
+                                        </select>
+                                    </td>
+                                    <td>' . ($row['timestamp'] == '0000-00-00 00:00:00' ? '---' : $row['timestamp']) . '</td>
+                                    <td><input type="text" name="custom_field[]" placeholder="YYYY-MM-DD" pattern="\d{4}-\d{2}-\d{2}" title="Please enter a valid date (YYYY-MM-DD)" value="' . (isset($_POST['custom_field'][$key]) ? htmlspecialchars($_POST['custom_field'][$key]) : '') . '" /></td>
+                                    <td> <button type="submit" name="save_btn" class="save-btn">SAVE</button> </td>
+                                  </tr>';
                         }
                     echo '</tbody>
                     </table>
@@ -108,7 +121,6 @@ if ($result) {
             updateStatus(this);
         };
 
-        var options = ["Standby", "Cleaning", "Fixing", "Replacing", "Done"];
 
         for (var i = 0; i < options.length; i++) {
             var option = document.createElement("option");
