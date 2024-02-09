@@ -51,15 +51,14 @@
                     <table class="status-table">
                         <thead>
                             <tr>
+                                <th>Building</th>
                                 <th>Room / Laboratory</th>
                                 <th>Problem</th>
                                 <th>Course</th>
                                 <th>Professor</th>
-                                <th>View Full Report</th>
                             </tr>
                         </thead>
                         <tbody>
-    
                             <?php
                                 $dbhost = "localhost";
                                 $username = "root";
@@ -72,60 +71,32 @@
                                     die("Connection failed" . $conn->connect_error);
                                 }
     
-                            $sql = "SELECT room, problem, course, professor FROM student_report_tbl ORDER BY timestamp DESC";
+                            $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
                             $result = $conn->query($sql);
     
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_assoc()) {
                                     echo "<tr>";
+                                    echo "<td>" . $row['building'] . "</td>";
                                     echo "<td>" . $row['room'] . "</td>";
                                     echo "<td>" . $row['problem'] . "</td>";
                                     echo "<td>" . $row['course'] . "</td>";
                                     echo "<td>" . $row['professor'] . "</td>";
-                                    echo "<td class='view-report-cell' onclick='openPopup()'>Click Here...</td>";
                                     echo "</tr>";
                                 }
-                            } else {
+                            } 
+                            
+                            else {
                                 echo "<tr><td colspan='5'>No records found</td></tr>";
                             }
-    
+
                             $conn->close();
                             ?>
-    
                         </tbody>
                     </table>
                 </div>
             </div>
         </main>
-
-
-
-        <!---------------
-              POPUP
-        ---------------->
-        <div id="popupContainer" class="popup-container">
-            <div class="popup-content">
-                <p>THE (room) IN THE (building) WAS REPORTED AT (timestamp) AS IT IS
-                CURRENTLY IN A (status). THE MOST RECENT OCCUPANTS OF THE
-                ROOM WE'RE THE STUDENT'S OF (course), UNDER THE SUPERVISION OF (professor).</p>
-                <button id="backBtn" class="back-btn" onclick="closePopup()">GO BACK</button>                 
-            </div>
-        </div>
-
-
-
-        <!---------------
-           MAIN SCRIPT
-        ---------------->
-        <script>
-            function openPopup() {
-                document.getElementById('popupContainer').style.display = 'flex';
-            }
-        
-            function closePopup() {
-                document.getElementById('popupContainer').style.display = 'none';
-            }
-        </script>
             
 
 
