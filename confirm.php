@@ -13,25 +13,20 @@ if ($conn->connect_error) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $newPassword = $_POST['newPassword'];
-
-    // Retrieve the email from the session or however you have stored it
-    $email = $_SESSION['email'];
-
-    // Update the password in the appropriate table based on the email
-    $update_faculty = mysqli_query($conn, "UPDATE faculty_registration_tbl SET password='$newPassword' WHERE email='$email'");
-    $update_maintenance = mysqli_query($conn, "UPDATE maintenance_registration_tbl SET password='$newPassword' WHERE email='$email'");
-    $update_student = mysqli_query($conn, "UPDATE student_registration_tbl SET password='$newPassword' WHERE email='$email'");
-
-    if ($update_faculty || $update_maintenance || $update_student) {
-        // Password updated successfully, you may redirect to a success page
-        header("Location: confirm.php");
-        exit();
-    } else {
-        // Failed to update password, handle accordingly
-        $_SESSION['error_message'] = "Failed to update password. Please try again.";
-        header("Location: confirm.php");
-        exit();
+    if(isset($_POST['saveBtn'])) {
+        $newPassword = $_POST['newPassword'];
+        // Assuming you're passing the email through session from forgotpassword.php
+        $email = $_SESSION['email']; 
+        
+        // Update the password in the database
+        $sql = "UPDATE faculty_registration_tbl SET `password`='$newPassword' WHERE `email`='$email'";
+        $result = mysqli_query($conn, $sql);
+        
+        if($result) {
+            echo "Password updated successfully!";
+        } else {
+            echo "Error updating password: " . mysqli_error($conn);
+        }
     }
 }
 ?>
@@ -60,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="university-text"><b> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES </b> </p>
         <p class="system-name">ROOM AND LABORATORY <br> CLEANLINESS AND MAINTENANCE REPORTING SYSTEM</p>
 
-        <form id="passwordForm" method="post" action="confirm.php">
+        <form id="passwordForm" method="post" action="">
             <div class="forgot-password-container">
                 <div class="form-group">
                     <label for="newPassword"> INPUT YOUR <br> NEW PASSWORD HERE: </label>
@@ -69,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="buttons-container">
-                <button id="saveBtn" class="save-btn" type="submit">SAVE</button>
+                <button id="saveBtn" class="save-btn" type="submit" name="saveBtn">SAVE</button>
             </div>
         </form>
     </div>
