@@ -28,7 +28,7 @@ if ($result) {
                 ? mysqli_real_escape_string($conn, $_POST['state'][$key])
                 : '';
 
-            $updateSql = "UPDATE student_report_tbl SET `Date End`='$dateEnd', `state`='$state' WHERE `id`='$id'";
+            $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
             $updateResult = $conn->query($updateSql);
 
             if (!$updateResult) {
