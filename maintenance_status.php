@@ -144,20 +144,21 @@ if ($result) {
 
 <!-- FOOTER -->
 <footer>
-    <table class="footer-table">
-        <tr>
-            <td class="contact-title">Contact Us:</td>
-            <td class="contact-info">binan@pup.edu.ph</td>
-            <td class="contact-info">(049) 513-5034</td>
-            <td class="quick-links">Quick Links:</td>
-            <td class="quick-links">
-                <a href="https://www.pup.edu.ph/about/" class="footer-link">About us</a>
-            </td>
-            <td class="quick-links">
-                <a href="https://www.pup.edu.ph/about/contactus" class="footer-link">Contacts</a>
-            </td>
-        </tr>
-    </table>
+<table class="footer-table">
+<tr>
+    <td class="contact-title">Contact Us:</td>
+    <td class="contact-info">binan@pup.edu.ph</td>
+    <td class="contact-info">(049) 513-5034</td>
+    <td class="quick-links">Quick Links:</td>
+    <td class="quick-links">
+        <a href="https://www.pup.edu.ph/about/" class="footer-link">About us</a>
+    </td>
+    <td class="quick-links">
+        <a href="https://www.pup.edu.ph/about/contactus" class="footer-link">Contacts</a>
+    </td>
+    <td class="quick-links logout"><a href="front_page.html">Logout</a></td>
+</tr>
+</table>
 </footer>
 </body>
 
