@@ -15,20 +15,17 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['uname'];
 
-    // Check if the email exists in any table
     $result_faculty = mysqli_query($conn, "SELECT * FROM faculty_registration_tbl WHERE email='$email'");
     $result_maintenance = mysqli_query($conn, "SELECT * FROM maintenance_registration_tbl WHERE email='$email'");
     $result_student = mysqli_query($conn, "SELECT * FROM student_registration_tbl WHERE email='$email'");
 
     if (mysqli_num_rows($result_faculty) > 0 || mysqli_num_rows($result_maintenance) > 0 || mysqli_num_rows($result_student) > 0) {
-        // Email exists, redirect to confirm.html
+        $_SESSION['email'] = $email; // Set the email in session variable
         header("Location: confirm.php");
         exit();
     } else {
-        // Email does not exist, handle accordingly (e.g., show an error message)
         $_SESSION['error_message'] = "Email not found. Please try again.";
         echo "<script>alert('Email not found. Please try again.');</script>";
-        
     }
 }
 ?>
