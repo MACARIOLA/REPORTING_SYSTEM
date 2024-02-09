@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the database (include 'state' column in the query)
-$sql = "SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl ORDER BY timestamp DESC";
+$sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
 if ($result) {
@@ -81,6 +81,7 @@ if ($result) {
                     <table class="status-table">
                         <thead>
                             <tr>
+                                <th>Building</th>
                                 <th>Room/Laboratory</th>
                                 <th>State</th>
                                 <th>Date-Started</th>
@@ -91,6 +92,7 @@ if ($result) {
                         <tbody>';
                         foreach ($data as $key => $row) {
                             echo '<tr>
+                                    <td>' . $row['building'] . '</td>
                                     <td>' . $row['room'] . '</td>
                                     <td class="state-cell">
                                         <select name="state[]">
