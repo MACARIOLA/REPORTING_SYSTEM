@@ -81,7 +81,6 @@ if ($result) {
                     <table class="status-table">
                         <thead>
                             <tr>
-                                <th>Building</th>
                                 <th>Room/Laboratory</th>
                                 <th>State</th>
                                 <th>Date-Started</th>
@@ -92,7 +91,6 @@ if ($result) {
                         <tbody>';
                         foreach ($data as $key => $row) {
                             echo '<tr>
-                                    <td>' . $row['building'] . '</td>
                                     <td>' . $row['room'] . '</td>
                                     <td class="state-cell">
                                         <select name="state[]">
