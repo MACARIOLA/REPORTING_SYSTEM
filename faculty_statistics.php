@@ -32,9 +32,10 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="maintenance_home.html" id="home">Home</a></li>
-                    <li class="active"><a href="maintenance_statistics.html" id="statistics">Statistics</a></li>
-                    <li><a href="maintenance_status.php" id="status">Status</a></li>
+                    <li><a href="faculty_home.html" id="home">Home</a></li>
+                    <li class="active"><a href="faculty_statistics.html" id="statistics">Statistics</a></li>
+                    <li><a href="faculty_status.php" id="status">Status</a></li>
+                    <li><a href="faculty_credits.html" id="credits">Credits</a></li>
                 </ul>
             </nav>
         </header>
@@ -42,7 +43,7 @@
 
 
         <!---------------
-             STATUS
+           STATISTICS
         ---------------->
         <main>
             <div class="spacer"></div>
@@ -59,76 +60,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr data-index="1">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>                        
-                            <tr data-index="2">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>                       
-                            <tr data-index="3">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>                        
-                            <tr data-index="4">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>                       
-                            <tr data-index="5">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
-                            <tr data-index="6">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
-                            <tr data-index="7">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
-                            <tr data-index="8">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
-                            <tr data-index="9">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
-                            <tr data-index="10">
-                                <td>Old Building | ComLab 2</td>
-                                <td>Dirty</td>
-                                <td>BSIT 1-1</td>
-                                <td>Mr. Miguel</td>
-                                <td class="view-report-cell" onclick="openPopup()">Click Here...</td>
-                            </tr>
+    
+                            <?php
+                                $dbhost = "localhost";
+                                $username = "root";
+                                $password = "";
+                                $dbname = "rlcmrs_dtb";
+
+                                $conn = mysqli_connect($dbhost, $username, $password, $dbname);
+
+                                if ($conn->connect_error) {
+                                    die("Connection failed" . $conn->connect_error);
+                                }
+    
+                            $sql = "SELECT room, problem, course, professor FROM student_report_tbl ORDER BY timestamp DESC";
+                            $result = $conn->query($sql);
+    
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['room'] . "</td>";
+                                    echo "<td>" . $row['problem'] . "</td>";
+                                    echo "<td>" . $row['course'] . "</td>";
+                                    echo "<td>" . $row['professor'] . "</td>";
+                                    echo "<td class='view-report-cell' onclick='openPopup()'>Click Here...</td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='5'>No records found</td></tr>";
+                            }
+    
+                            $conn->close();
+                            ?>
+    
                         </tbody>
                     </table>
                 </div>
@@ -142,10 +106,9 @@
         ---------------->
         <div id="popupContainer" class="popup-container">
             <div class="popup-content">
-                <p>THE (ROOM / LABORATORY) IN THE (BUILDING) REQUIRES (SOLUTION) AS IT IS
-                CURRENTLY IN A (STATUS). THE MOST RECENT OCCUPANTS OF THE
-                ROOM WE'RE THE STUDENT'S OF (YR - SEC), UNDER THE SUPERVISION OF (PROFESSOR). <br>
-                (NUMBER OF REPORT) USERS REPORTED THIS PROBLEM FROM MONDAY, (DATE) TO FRIDAY (DATE).</p>
+                <p>THE (room) IN THE (building) WAS REPORTED AT (timestamp) AS IT IS
+                CURRENTLY IN A (status). THE MOST RECENT OCCUPANTS OF THE
+                ROOM WE'RE THE STUDENT'S OF (course), UNDER THE SUPERVISION OF (professor).</p>
                 <button id="backBtn" class="back-btn" onclick="closePopup()">GO BACK</button>                 
             </div>
         </div>
