@@ -34,7 +34,7 @@ if ($stmt === false) {
 }
 
 if ($stmt->execute()) {
-    echo '<script>window.location.href = "../student_statistics.html";</script>';
+    echo '<script>window.location.href = "../student_statistics.php";</script>';
 } else {
     echo "Error: " . $stmt->error;
 }
