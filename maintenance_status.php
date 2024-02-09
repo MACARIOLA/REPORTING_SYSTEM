@@ -66,8 +66,8 @@ if ($result) {
         <nav>
             <ul>
                 <li><a href="maintenance_home.html" id="home">Home</a></li>
-                <li><a href="maintenance_statistics.html" id="statistics">Statistics</a></li>
-                <li class="active"><a href="maintenance_status.html" id="status">Status</a></li>
+                <li><a href="maintenance_statistics.php" id="statistics">Statistics</a></li>
+                <li class="active"><a href="maintenance_status.php" id="status">Status</a></li>
             </ul>
         </nav>
     </header>
