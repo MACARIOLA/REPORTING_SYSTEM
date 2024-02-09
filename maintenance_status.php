@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the database (include 'state' column in the query)
-$sql = "SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl";
+$sql = "SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 
 if ($result) {
@@ -28,7 +28,7 @@ if ($result) {
                 ? mysqli_real_escape_string($conn, $_POST['state'][$key])
                 : '';
 
-            $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
+            $sql = "SELECT id, room, timestamp, `Date End`, state FROM student_report_tbl ORDER BY timestamp DESC";
             $updateResult = $conn->query($updateSql);
 
             if (!$updateResult) {
