@@ -71,7 +71,7 @@
                                 die("Connection failed" . $conn->connect_error);
                             }
     
-                            $sql = "SELECT * FROM student_report_tbl";
+                            $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
                             $result = $conn->query($sql);
     
                             if ($result->num_rows > 0) {
