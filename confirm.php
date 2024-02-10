@@ -15,21 +15,32 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST['saveBtn'])) {
         $newPassword = $_POST['newPassword'];
-        // Assuming you're passing the email through session from forgotpassword.php
         $email = $_SESSION['email']; 
         
-        // Update the password in the database
-        $sql = "UPDATE faculty_registration_tbl SET `password`='$newPassword' WHERE `email`='$email'";
-        $result = mysqli_query($conn, $sql);
-        
-        if($result) {
-            echo "Password updated successfully!";
+        // Update password in faculty_registration_tbl
+        $sql_faculty = "UPDATE faculty_registration_tbl SET `password`='$newPassword' WHERE `email`='$email'";
+        $result_faculty = mysqli_query($conn, $sql_faculty);
+
+        // Update password in maintenance_registration_tbl
+        $sql_maintenance = "UPDATE maintenance_registration_tbl SET `password`='$newPassword' WHERE `email`='$email'";
+        $result_maintenance = mysqli_query($conn, $sql_maintenance);
+
+        // Update password in student_registration_tbl
+        $sql_student = "UPDATE student_registration_tbl SET `password`='$newPassword' WHERE `email`='$email'";
+        $result_student = mysqli_query($conn, $sql_student);
+
+        if($result_faculty && $result_maintenance && $result_student) {
+            echo "<script>alert('Password updated successfully!'); window.location.href = 'front_page.html';</script>";
+            exit(); // Exit to prevent further execution
         } else {
-            echo "Error updating password: " . mysqli_error($conn);
+            $_SESSION['error_message'] = "Error updating password: " . mysqli_error($conn);
+            echo "<script>alert('Email not found. Please try again.'); window.location.href = 'front_page.html';</script>";
+            exit(); // Exit to prevent further execution
         }
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
