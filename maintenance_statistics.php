@@ -56,6 +56,7 @@
                                 <th>Problem</th>
                                 <th>Course</th>
                                 <th>Professor</th>
+                                <th>View Full Report</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -70,33 +71,56 @@
                                 if ($conn->connect_error) {
                                     die("Connection failed" . $conn->connect_error);
                                 }
-    
-                            $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
-                            $result = $conn->query($sql);
-    
-                            if ($result->num_rows > 0) {
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['building'] . "</td>";
-                                    echo "<td>" . $row['room'] . "</td>";
-                                    echo "<td>" . $row['problem'] . "</td>";
-                                    echo "<td>" . $row['course'] . "</td>";
-                                    echo "<td>" . $row['professor'] . "</td>";
-                                    echo "</tr>";
-                                }
-                            } 
-                            
-                            else {
-                                echo "<tr><td colspan='5'>No records found</td></tr>";
-                            }
 
-                            $conn->close();
+                                $sql = "SELECT * FROM student_report_tbl ORDER BY timestamp DESC";
+                                $result = $conn->query($sql);
+
+                                if ($result->num_rows > 0) {
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo "<tr>";
+                                        echo "<td>" . $row['building'] . "</td>";
+                                        echo "<td>" . $row['room'] . "</td>";
+                                        echo "<td>" . $row['problem'] . "</td>";
+                                        echo "<td>" . $row['course'] . "</td>";
+                                        echo "<td>" . $row['professor'] . "</td>";
+                                        echo "<td class='view-report-cell' onclick='openPopup(\"" . $row['building'] . "\", \"" . $row['room'] . "\", \"" . $row['timestamp'] . "\", \"" . $row['course'] . "\", \"" . $row['professor'] . "\")'>Click Here...</td>";
+                                        echo "</tr>";
+                                    }
+                                } else {
+                                    echo "<tr><td colspan='5'>No records found</td></tr>";
+                                }
+
+                                $conn->close();
                             ?>
                         </tbody>
                     </table>
                 </div>
             </div>
         </main>
+
+        <!---------------
+            POPUP
+        ---------------->
+        <div id="popupContainer" class="popup-container">
+            <div class="popup-content">
+                <p id="popupText"></p>
+                <button id="backBtn" class="back-btn" onclick="closePopup()">GO BACK</button>                 
+            </div>
+        </div>
+
+        <!---------------
+        MAIN SCRIPT
+        ---------------->
+        <script>
+            function openPopup(building, room, timestamp, course, professor) {
+                document.getElementById('popupContainer').style.display = 'flex';
+                document.getElementById('popupText').innerHTML = "THE <span style='color: white;'>" + room + "</span> IN THE <span style='color: white;'>" + building + "</span> IS REPORTED AT <span style='color: white;'>" + timestamp + "</span>. THE MOST RECENT OCCUPANTS OF THE ROOM WERE THE STUDENTS OF <span style='color: white;'>" + course + "</span>, UNDER THE SUPERVISION OF <span style='color: white;'>" + professor + "</span>.";
+            }
+
+            function closePopup() {
+                document.getElementById('popupContainer').style.display = 'none';
+            }
+        </script>
             
 
 
